@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzapdos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 22:51:06 by mzapdos           #+#    #+#             */
-/*   Updated: 2019/09/19 22:54:48 by mzapdos          ###   ########.fr       */
+/*   Created: 2019/09/19 22:48:45 by mzapdos           #+#    #+#             */
+/*   Updated: 2019/09/19 23:25:57 by mzapdos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
-{
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
-}
+#ifndef LIBFT_H
+# define LIBFT_H
+# include <string.h>
+
+void	ft_bzero(void *s, size_t n);
+int		ft_isdigit(int c);
+void	*ft_memset(void *b, int c, size_t len);
+int		ft_isalpha(int c);
+int		memcmp(const void *s1, const void *s2, size_t n);
+#endif

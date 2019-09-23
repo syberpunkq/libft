@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syberpunkq <syberpunkq@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mzapdos <mzapdos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/22 00:04:42 by mzapdos           #+#    #+#             */
-/*   Updated: 2019/09/23 21:55:10 by mzapdos          ###   ########.fr       */
+/*   Created: 2019/09/23 23:02:21 by mzapdos           #+#    #+#             */
+/*   Updated: 2019/09/23 23:38:00 by mzapdos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memalloc(size_t size)
 {
-	while (*s)
-	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
-	}
-	if (c == 0)
-		return ((char*)s);
-	return (NULL);
+	size_t	i;
+	char	*ptr;
+
+	i = 0;
+	ptr = malloc(size);
+	while (i < size)
+		ptr[i++] = 0;
+	return (ptr);
 }

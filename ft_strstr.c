@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mzapdos <mzapdos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: syberpunkq <syberpunkq@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 00:27:42 by mzapdos           #+#    #+#             */
-/*   Updated: 2019/09/22 00:38:58 by mzapdos          ###   ########.fr       */
+/*   Updated: 2019/09/22 19:18:49 by syberpunkq       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strstr(const char *haystack, const char *needle)
 	const char	*the_place;
 
 	i = 0;
+	if (needle[0] == 0)
+		return((char *)&haystack[0]);
 	while (haystack[i])
 	{
 		if (needle[j] == 0)

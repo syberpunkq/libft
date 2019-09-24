@@ -6,14 +6,14 @@
 /*   By: mzapdos <mzapdos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 22:48:45 by mzapdos           #+#    #+#             */
-/*   Updated: 2019/09/24 22:23:29 by mzapdos          ###   ########.fr       */
+/*   Updated: 2019/09/25 01:01:18 by mzapdos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
-# include <stdlib.h>
+# include <stdlib.h>     
 # include <unistd.h>
 
 void	ft_bzero(void *s, size_t n);
@@ -64,4 +64,6 @@ int		ft_strequ(char const *s1, char const *s2);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s);
+char	*ft_itoa(int n);
 #endif

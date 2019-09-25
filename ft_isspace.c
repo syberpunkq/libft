@@ -1,42 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzapdos <mzapdos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/21 23:45:37 by mzapdos           #+#    #+#             */
-/*   Updated: 2019/09/26 00:24:40 by mzapdos          ###   ########.fr       */
+/*   Created: 2019/09/26 00:42:59 by mzapdos           #+#    #+#             */
+/*   Updated: 2019/09/26 00:43:15 by mzapdos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int	ft_isspace(int c)
 {
-	size_t	i;
-	size_t	j;
-	size_t	result;
-
-	i = 0;
-	j = 0;
-	result = 0;
-	while (dst[i])
-		i++;
-	while (src[result])
-		result++;
-	if (size == 0)
-		return (result);
-	if (size < i)
-		result += size;
-	else
-		result += i;
-	while (src[j] && i < size - 1 && dst != src)
-	{
-		dst[i] = src[j];
-		j++;
-		i++;
-	}
-	dst[i] = 0;
-	return (result);
+	if (c == ' ' || c == '\f' || c == '\n'
+			|| c == '\r' || c == '\t' || c == '\v')
+		return (1);
+	return (0);
 }

@@ -6,14 +6,13 @@
 /*   By: mzapdos <mzapdos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/21 16:45:48 by mzapdos           #+#    #+#             */
-/*   Updated: 2019/09/21 18:27:32 by mzapdos          ###   ########.fr       */
+/*   Updated: 2019/09/26 00:23:31 by mzapdos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *restrict dst,
-		const void *restrict src, int c, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	size_t			i;
 	char			*ptr;

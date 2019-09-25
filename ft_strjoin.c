@@ -6,7 +6,7 @@
 /*   By: mzapdos <mzapdos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 22:22:39 by mzapdos           #+#    #+#             */
-/*   Updated: 2019/09/24 22:31:13 by mzapdos          ###   ########.fr       */
+/*   Updated: 2019/09/26 00:28:08 by mzapdos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 	while (s2[j])
 		j++;
-	str = malloc(sizeof(char) * (i + j + 1));
+	if (!(str = malloc(sizeof(char) * (i + j + 1))))
+		return (NULL);
 	i = 0;
 	j = 0;
 	while (s1[i])

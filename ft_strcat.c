@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mzapdos <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mzapdos <mzapdos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/21 23:04:32 by mzapdos           #+#    #+#             */
-/*   Updated: 2019/09/21 23:09:38 by mzapdos          ###   ########.fr       */
+/*   Updated: 2019/09/26 00:24:34 by mzapdos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *restrict s1, const char *restrict s2)
+char	*ft_strcat(char *s1, const char *s2)
 {
 	int	i;
 	int	j;

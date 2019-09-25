@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mzapdos <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: mzapdos <mzapdos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 23:40:21 by mzapdos           #+#    #+#             */
-/*   Updated: 2019/09/23 23:45:20 by mzapdos          ###   ########.fr       */
+/*   Updated: 2019/09/26 01:06:13 by mzapdos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
 
 void	ft_putstr(char const *s)
 {

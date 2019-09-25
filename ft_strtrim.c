@@ -6,34 +6,11 @@
 /*   By: mzapdos <mzapdos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 22:34:07 by mzapdos           #+#    #+#             */
-/*   Updated: 2019/09/25 00:05:58 by mzapdos          ###   ########.fr       */
+/*   Updated: 2019/09/26 01:16:02 by mzapdos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int		ft_isspace(int c)
-{
-	if (c == ' ' || c == '\n' || c == '\t')
-		return (1);
-	return (0);
-}
-
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
-{
-	size_t	i;
-	char	*str;
-
-	i = 0;
-	str = malloc(sizeof(char) * len + 1);
-	while (i < len)
-	{
-		str[i] = s[i + start];
-		i++;
-	}
-	str[i] = 0;
-	return (str);
-}
 
 char	*ft_strtrim(char const *s)
 {

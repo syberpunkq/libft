@@ -5,68 +5,49 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzapdos <mzapdos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/25 00:07:40 by mzapdos           #+#    #+#             */
-/*   Updated: 2019/09/25 01:11:12 by mzapdos          ###   ########.fr       */
+/*   Created: 2019/09/25 23:36:36 by mzapdos           #+#    #+#             */
+/*   Updated: 2019/09/26 01:19:37 by mzapdos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_pow(int nb, int p)
+static int	num_count(long i)
 {
-	int i;
-	int res;
+	int n;
 
-	i = 0;
-	res = 1;
-	while (i < p)
+	n = 1;
+	while (i >= 10)
 	{
-		res = res * nb;
-		i++;
+		i = i / 10;
+		n++;
 	}
-	return (res);
+	return (n);
 }
 
-int		digits_count(int nb)
+char		*ft_itoa(int i)
 {
-	int result;
-
-	result = 1;
-	while (nb >= 10 || nb <= -10)
-	{
-		nb = nb / 10;
-		result++;
-	}
-	return (result);
-}
-
-char	*ft_itoa(int n)
-{
-	int		i;
-	int		num_of_digits;
-	int		current_digit;
-	int		current_pow;
 	int		sign;
+	long	nb;
+	int		numcount;
 	char	*str;
 
-	sign = 1;
-	if (n < 0)
-		sign = -1;
-	num_of_digits = digits_count(n);
-	str = malloc(sizeof(char) * num_of_digits + 1);
-	i = 0;
-	if (sign == -1)
+	sign = 0;
+	nb = (long)i;
+	if (nb < 0 && (nb = -nb))
+		sign = 1;
+	numcount = num_count(nb) + sign;
+	if (!(str = malloc(sizeof(char) * numcount + 1)))
+		return (NULL);
+	str[numcount--] = '\0';
+	if (nb == 0)
+		str[numcount] = '0';
+	while (nb > 0)
 	{
-		str[i++] = '-';
-		num_of_digits++;
+		str[numcount--] = (char)(nb % 10) + 48;
+		nb = nb / 10;
 	}
-	while (i < num_of_digits)
-	{
-		current_pow = ft_pow(10, num_of_digits - i - 1);
-		current_digit = n / current_pow * sign;
-		str[i] = current_digit + '0';
-		n = n - current_digit * current_pow * sign;
-		i++;
-	}
+	if (sign)
+		str[0] = '-';
 	return (str);
 }

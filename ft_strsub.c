@@ -6,7 +6,7 @@
 /*   By: mzapdos <mzapdos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 22:11:00 by mzapdos           #+#    #+#             */
-/*   Updated: 2019/09/26 01:15:57 by mzapdos          ###   ########.fr       */
+/*   Updated: 2019/09/27 01:33:19 by mzapdos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*str;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	if (!(str = malloc(sizeof(char) * len + 1)))
 		return (NULL);

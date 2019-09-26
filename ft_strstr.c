@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syberpunkq <syberpunkq@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mzapdos <mzapdos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/22 00:27:42 by mzapdos           #+#    #+#             */
-/*   Updated: 2019/09/23 21:55:41 by mzapdos          ###   ########.fr       */
+/*   Created: 2019/09/27 00:56:23 by mzapdos           #+#    #+#             */
+/*   Updated: 2019/09/27 01:25:46 by mzapdos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,17 @@
 
 char	*ft_strstr(const char *haystack, const char *needle)
 {
-	int			i;
-	int			j;
-	const char	*the_place;
+	size_t	len;
+	char	*from;
 
-	i = 0;
-	if (needle[0] == 0)
-		return ((char *)&haystack[0]);
-	while (haystack[i])
+	from = (char *)haystack;
+	if (!(len = ft_strlen(needle)))
+		return (from);
+	while ((from = ft_strchr(from, *needle)))
 	{
-		if (needle[j] == 0)
-			return ((char *)the_place);
-		else if (haystack[i] == needle[j])
-		{
-			if (j == 0)
-				the_place = &haystack[i];
-			j++;
-		}
-		else
-			j = 0;
-		i++;
+		if (!ft_strncmp(from, needle, len))
+			return (from);
+		from++;
 	}
 	return (NULL);
 }

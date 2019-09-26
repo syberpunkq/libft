@@ -6,7 +6,7 @@
 /*   By: mzapdos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 21:36:24 by mzapdos           #+#    #+#             */
-/*   Updated: 2019/09/24 21:39:37 by mzapdos          ###   ########.fr       */
+/*   Updated: 2019/09/26 22:39:51 by mzapdos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	int i;
 
+	if (!(s && f))
+		return ;
 	i = 0;
 	while (s[i])
 	{

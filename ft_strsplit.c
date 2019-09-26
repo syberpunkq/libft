@@ -6,7 +6,7 @@
 /*   By: mzapdos <mzapdos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/25 21:33:19 by mzapdos           #+#    #+#             */
-/*   Updated: 2019/09/26 01:19:07 by mzapdos          ###   ########.fr       */
+/*   Updated: 2019/09/27 01:38:31 by mzapdos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ char		**ft_strsplit(char const *s, char c)
 	int		j;
 	int		len;
 
+	if (!(s && c))
+		return (NULL);
 	if (!(res = malloc(sizeof(char *) * count(s, c) + 1)))
 		return (NULL);
 	j = 0;
@@ -56,8 +58,7 @@ char		**ft_strsplit(char const *s, char c)
 			len++;
 			i++;
 		}
-		res[j] = ft_strsub(s, i - len, len);
-		j++;
+		res[j++] = ft_strsub(s, i - len, len);
 	}
 	res[j] = 0;
 	return (res);

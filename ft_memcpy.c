@@ -6,7 +6,7 @@
 /*   By: mzapdos <mzapdos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/21 16:45:48 by mzapdos           #+#    #+#             */
-/*   Updated: 2019/09/26 00:24:28 by mzapdos          ###   ########.fr       */
+/*   Updated: 2019/09/27 00:22:44 by mzapdos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t			i;
-	unsigned char	*d1;
-	unsigned char	*s1;
+	size_t		i;
+	char		*d;
+	const char	*s;
 
-	d1 = (unsigned char *)dst;
-	s1 = (unsigned char *)src;
+	if (!dst && !src)
+		return (NULL);
+	d = (char *)dst;
+	s = (const char *)src;
 	i = 0;
 	while (i < n)
 	{
-		d1[i] = s1[i];
+		d[i] = s[i];
 		i++;
 	}
 	return (dst);

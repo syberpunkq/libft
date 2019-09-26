@@ -6,7 +6,7 @@
 /*   By: mzapdos <mzapdos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 23:40:21 by mzapdos           #+#    #+#             */
-/*   Updated: 2019/09/26 01:06:13 by mzapdos          ###   ########.fr       */
+/*   Updated: 2019/09/27 00:48:18 by mzapdos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putstr(char const *s)
 {
+	if (!s)
+		return ;
 	while (*s)
 		ft_putchar(*(s++));
 }

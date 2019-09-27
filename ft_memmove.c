@@ -6,7 +6,7 @@
 /*   By: mzapdos <mzapdos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/21 18:31:27 by mzapdos           #+#    #+#             */
-/*   Updated: 2019/09/27 01:09:34 by mzapdos          ###   ########.fr       */
+/*   Updated: 2019/09/27 21:21:33 by mzapdos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	const char	*from;
 	char		*to;
 
+	if (!(dst || src))
+		return (NULL);
 	from = (const char *)src;
 	to = (char *)dst;
 	i = 0;
